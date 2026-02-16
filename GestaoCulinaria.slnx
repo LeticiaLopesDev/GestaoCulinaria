@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="GestaoCulinaria.API/GestaoCulinaria.API.csproj" />
+  <Project Path="GestaoCulinaria.Application/GestaoCulinaria.Application.csproj" />
+  <Project Path="GestaoCulinaria.Blazor/GestaoCulinaria.Blazor.csproj" />
+  <Project Path="GestaoCulinaria.Domain/GestaoCulinaria.Domain.csproj" />
+  <Project Path="GestaoCulinaria.Infrastructure/GestaoCulinaria.Infrastructure.csproj" />
+</Solution>

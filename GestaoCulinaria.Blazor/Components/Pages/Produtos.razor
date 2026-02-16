@@ -1,0 +1,37 @@
+﻿@page "/produtos"
+@rendermode @(new InteractiveServerRenderMode(prerender: false))
+
+@inject ProdutoApiService Service
+
+<h3>Produtos</h3>
+
+@if (carregando)
+{
+    <p>Carregando produtos...</p>
+}
+else if (produtos.Count == 0)
+{
+    <p>Nenhum produto cadastrado</p>
+}
+else
+{
+    <ul>
+        @foreach (var produto in produtos)
+        {
+            <li>
+                <b>@produto.Nome</b> — R$ @produto.Preco
+            </li>
+        }
+    </ul>
+}
+
+@code {
+    private List<ProdutoModel> produtos = new();
+    private bool carregando = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        produtos = await Service.ObterTodosAsync();
+        carregando = false;
+    }
+}
