@@ -6,6 +6,7 @@ namespace GestaoCulinaria.Infrastructure.Persistence;
 public class AppDbContext : DbContext
 {
     public DbSet<Produto> Produtos => Set<Produto>();
+    public DbSet<Usuario> Usuarios => Set<Usuario>();
 
     public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
